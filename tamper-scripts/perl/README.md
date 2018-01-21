@@ -4,7 +4,7 @@
 ## Perl Template
 
 ```ruby
-#!/usr/bin/env ruby
+#!/usr/bin/env perl
 #
 # Author:       KING SABRI | @KINGSABRI
 # Description:  A Perl Template to build on your tamper, copy and build on me.
