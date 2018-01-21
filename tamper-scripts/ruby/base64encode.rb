@@ -10,4 +10,4 @@ require 'base64'
 @payload = ARGV[0]
 @kwargs  = eval(ARGV[1])
 
-print "#{Base64.urlsafe_encode64(@payload)}|||#{@kwargs.to_json}"
+print "#{Base64.urlsafe_encode64(@payload)}" + "|||" +"#{@kwargs.to_json}"

@@ -12,4 +12,4 @@ require 'json'
 
 @kwargs[:headers]["X-Forwarded-For"] = Array.new(4){rand(256)}.join('.')
 
-print "#{@payload}|||#{@kwargs.to_json}"
+print "#{@payload}" + "|||" + "#{@kwargs.to_json}"

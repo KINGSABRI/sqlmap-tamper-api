@@ -15,7 +15,7 @@ require 'json'
 @payload = ARGV[0]
 @kwargs  = eval(ARGV[1])
 
-print "#{@payload}|||#{@kwargs.to_json}"
+print "#{@payload}" + "|||" + "#{@kwargs.to_json}"
 ```
 
 **Note: All maintain above template style as is and manipulate `@payload` and `@kwargs`.**
