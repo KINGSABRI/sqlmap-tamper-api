@@ -17,7 +17,12 @@ sys_args    = sys.argv
 tamper_name = os.path.basename(__file__).split(".")[0]
 org_path    = os.path.realpath(__file__).replace(os.path.basename(__file__), "")
 module_name = sys_args.index(tamper_name) + 1
-script_name = sys.argv[module_name]
+try:
+    script_name = sys.argv[module_name]
+  
+except IndexError:
+    print "[*] No agruments given to the tamper"
+    sys.exit(0)
 
 if "/" in script_name:
     script = script_name
