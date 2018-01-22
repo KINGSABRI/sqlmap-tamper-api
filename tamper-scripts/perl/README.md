@@ -3,7 +3,7 @@
 
 ## Perl Template
 
-```ruby
+```perl
 #!/usr/bin/env perl
 #
 # Author:       KING SABRI | @KINGSABRI
