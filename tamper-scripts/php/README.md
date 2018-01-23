@@ -19,4 +19,4 @@ echo json_encode($json);
 ?>
 ```
 
-**Note: Maintain above template style as is, manipulate `$json` values not structure(JSON).**
+**Note: Maintain above template style as is, manipulate `json` values(payload & kwargs) not it's structure(JSON).**

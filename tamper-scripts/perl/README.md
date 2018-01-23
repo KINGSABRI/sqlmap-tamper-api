@@ -20,6 +20,4 @@ my $kwargs  = $ARGV[1];
 print $payload."|||".$kwargs;
 ```
 
-**Note: All maintain above template style as is and manipulate `payload` and `kwargs`.**
-- payload : string
-- kwargs  : Hash
+**Note: Maintain above template style as is, manipulate `json` values(payload & kwargs) not it's structure(JSON).**
