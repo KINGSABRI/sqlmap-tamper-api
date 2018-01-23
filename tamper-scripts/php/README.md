@@ -5,19 +5,18 @@
 
 ```php
 #!/usr/bin/env php
+<?php
 #
 # Author:       KING SABRI | @KINGSABRI
-# Description:  A Perl Template to build on your tamper, copy and build on me.
+# Description:  A PHP Template to build on your tamper, copy and build on me.
 # Requirements: None
 #
-use strict;
-use JSON;
-use JSON::Parse ':all';
+$json    = json_decode($argv[1], true);
+$payload = $json['payload'];
+$kwargs  = $json['headers'];
 
-my $payload = $ARGV[0];
-my $kwargs  = $ARGV[1];
-
-print $payload."|||".$kwargs;
+echo json_encode($json);
+?>
 ```
 
 **Note: All maintain above template style as is and manipulate `payload` and `kwargs`.**
