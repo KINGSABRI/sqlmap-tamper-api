@@ -9,7 +9,8 @@ var payload = json["payload"];
 var kwargs  = json["kwargs"];
 
 var Base64 = {
-    characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='\",-" ,
+    characters: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+ ,
 
     encode: function( string )
     {
