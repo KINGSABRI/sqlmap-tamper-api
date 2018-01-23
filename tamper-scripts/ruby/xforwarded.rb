@@ -7,9 +7,10 @@
 #
 require 'json'
 
-@payload = ARGV[0]
-@kwargs  = eval(ARGV[1])
+@json    = JSON.parse(ARGV[0])
+@payload = @json["payload"]
+@kwargs  = @json["kwargs"]
 
-@kwargs[:headers]["X-Forwarded-For"] = Array.new(4){rand(256)}.join('.')
+@json["headers"]["X-Forwarded-For"] = Array.new(4){rand(256)}.join('.')
 
-print "#{@payload}" + "|||" + "#{@kwargs.to_json}"
+print @json.to_json

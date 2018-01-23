@@ -12,12 +12,11 @@
 #
 require 'json'
 
-@payload = ARGV[0]
-@kwargs  = eval(ARGV[1])
+@json    = JSON.parse(ARGV[0])
+@payload = @json["payload"]
+@kwargs  = @json["kwargs"]
 
-print "#{@payload}" + "|||" + "#{@kwargs.to_json}"
+print @json.to_json
 ```
 
-**Note: All maintain above template style as is and manipulate `@payload` and `@kwargs`.**
-- @payload : string
-- @kwargs  : Hash
+**Note: Maintain above template style as is, manipulate `@json` values not structure(JSON).**
