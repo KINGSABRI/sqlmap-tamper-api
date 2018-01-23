@@ -5,10 +5,11 @@
 # Description:  A PHP Template to build on your tamper, copy and build on me.
 # Requirements: None
 #
-$payload = $argv[1];
-// $kwargs  = eval($argv[2]);
-$kwargs  = $argv[2];
+$json    = json_decode($argv[1], true);
+$payload = $json['payload'];
+$kwargs  = $json['headers'];
 
+$json['payload'] = base64_encode($payload);
 
-echo $payload.'|||'.$kwargs;
+echo json_encode($json);
 ?>

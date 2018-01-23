@@ -10,6 +10,7 @@ from lib.core.enums import PRIORITY
 import sys
 import os
 import subprocess
+import json
 
 __priority__ = PRIORITY.LOWEST
 
@@ -32,16 +33,23 @@ else:
 
 print "[+] Loading Module: %s" % script_name
 
-def run(script, payload, kwargs):
+def run(script, json):
     os.chmod(script, 0755)
-    result = subprocess.check_output([script, payload, kwargs])
+    result = subprocess.check_output([script, json])
     return result
+
+def ascii_dict(data):
+    ascii_encode = lambda x: x.encode('ascii') if isinstance(x, unicode) else x
+    return dict(map(ascii_encode, pair) for pair in data.items())
 
 def tamper(payload, **kwargs):
     if payload:
-        raw     = run(script, payload, str(kwargs)).split('|||')
-        payload = raw[0]
-        kwargs  = eval(raw[1])
+        jbuilder = json.dumps({"payload": payload, "kwargs": kwargs})
+        json_raw = json.loads(run(script, jbuilder), object_hook=ascii_dict)
+
+        payload = json_raw["payload"]
+        kwargs  = json_raw["kwargs"]
+
         retVal  = payload
 
     return retVal

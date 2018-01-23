@@ -9,7 +9,8 @@ use JSON;
 use JSON::Parse ':all';
 use MIME::Base64;
 
-my $payload = $ARGV[0];
-my $kwargs  = $ARGV[1];
+my %json    = decode_json $ARGV[0];
+my $payload = $json{"payload"};
+my $kwargs  = $json{"headers"};
 
-print encode_base64($payload, '')."|||".$kwargs;
+print encode_json \%json
