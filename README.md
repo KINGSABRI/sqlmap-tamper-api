@@ -1,7 +1,7 @@
 # SQLmap Tamper-API
 It's an API for SQLmap tamper scripts allows you to use your favorite programming language to write your tamper scripts.
 
-This API solves SQLmap limitation of accepting only python scripts to write tamper scripts.
+This API solves SQLmap limitation of accepting only python to write tamper scripts.
 
 ## How it works
 **`taper-api.py`** script sends the **payload** and **kwargs** in a JSON format ( `{"payload": "", "kwargs": {"headers": {}}}` ) to the foreign tamper script's STDIN as an argument.
