@@ -4,9 +4,9 @@ It's an extension for SQLmap tamper scripts allows you to use your favorite prog
 This extension is a bypass for SQLmap limitation of accepting only python scripts to write tamper scripts.
 
 ## How it works
-**`taper-api.py`** script sends the **payload** and **kwargs** as a JSON format ( `{"payload": "", "kwargs": {"headers": {}}}` ) to the foreign language tamper script's STDIN as an argument.
+**`taper-api.py`** script sends the **payload** and **kwargs** in a JSON format ( `{"payload": "", "kwargs": {"headers": {}}}` ) to the foreign tamper script's STDIN as an argument.
 
-From there the foreign script parses the JSON and process it then send it as a JSON format to STDOUT where `tamper-api.py` reads and parses then sends it to SQLmap.
+From there the foreign script parses the JSON and process it then sends it as a JSON format again to STDOUT where `tamper-api.py` reads and parses then sends it to SQLmap.
 
 ```
     ,-------(returns objects)---------,
