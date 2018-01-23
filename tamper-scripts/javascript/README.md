@@ -8,7 +8,7 @@
 //
 // Author:       KING SABRI | @KINGSABRI
 // Description:  A JavaScript Template to build on your tamper, copy and build on me.
-// Requirements: None
+// Requirements: nodejs or any things works as Javascript interpreter on the system
 //
 var json    = JSON.parse(process.argv[2]);
 var payload = json["payload"];
