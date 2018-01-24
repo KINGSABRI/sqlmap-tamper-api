@@ -47,8 +47,12 @@ def tamper(payload, **kwargs):
         jbuilder = json.dumps({"payload": payload, "kwargs": kwargs})
         json_raw = json.loads(run(script, jbuilder), object_hook=ascii_dict)
 
-        payload = json_raw["payload"]
-        kwargs  = json_raw["kwargs"]
+        user_kwargs  = json_raw["kwargs"]
+        user_headers = user_kwargs.get("headers")
+        headers      = kwargs.get("headers", {})
+
+        for header in user_headers:
+            headers[header] = user_kwargs["headers"][header]
 
         retVal  = payload
 
