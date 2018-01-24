@@ -11,6 +11,6 @@ require 'json'
 @payload = @json["payload"]
 @kwargs  = @json["kwargs"]
 
-@json["headers"]["X-Forwarded-For"] = Array.new(4){rand(256)}.join('.')
+@json["kwargs"]["headers"]["X-Forwarded-For"] = Array.new(4){rand(256)}.join('.')
 
 print @json.to_json
