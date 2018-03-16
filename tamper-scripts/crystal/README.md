@@ -29,5 +29,5 @@ crystal build base64encode.cr
 
 Then simply use it
 ```
-sqlmap -v3 -u http://example.com/pages.php?page=1 --tamper tamper-api base64encode.rb
+sqlmap -v3 -u http://example.com/pages.php?page=1 --tamper tamper-api base64encode
 ```
