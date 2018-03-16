@@ -1,3 +1,4 @@
+# 
 # Author:       KING SABRI | @KINGSABRI
 # Description:  Base64 encoding all characters in a given payload
 # Requirements: None
