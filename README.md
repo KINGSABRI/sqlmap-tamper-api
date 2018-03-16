@@ -46,7 +46,7 @@ print @json.to_json
 
 ## Usage
 ```
-sqlmap -u http://example.com/pages.php?page=1 --tamper tamper-api base64encode.rb
+sqlmap -v3 -u http://example.com/pages.php?page=1 --tamper tamper-api base64encode.rb
 ```
 
 ## Contribution
